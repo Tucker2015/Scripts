@@ -41,3 +41,5 @@ docker run -d \
     -e "LETSENCRYPT_HOST=nzb.kevtucker.com" \
     -e "LETSENCRYPT_EMAIL=mail@kevtucker.com" \
     linuxserver/nzbget
+    
+## Install Deluge
