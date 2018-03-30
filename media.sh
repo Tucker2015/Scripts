@@ -21,7 +21,7 @@ docker run -d \
   --name=radarr \
     -v /etc/docker/radarr:/config \
     -v /home/kevin/downloads:/downloads \
-    -v /mnt/media:/movies \
+    -v /mnt/media/movies:/movies \
     -e PGID=1000 -e PUID=1000  \
     -p 7878:7878 \
     -e "VIRTUAL_HOST=radarr.kevtucker.com" \
