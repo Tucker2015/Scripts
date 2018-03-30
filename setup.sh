@@ -28,4 +28,8 @@ apt-get update -y
 apt-get install docker-ce -y
 systemctl enable docker
 groupadd docker
-usermod -aG docker $USER
+usermod -a -G docker $USER
+
+clear
+
+echo "Please Reboot the system by running sudo reboot"
