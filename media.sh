@@ -14,6 +14,8 @@ docker run -d \
     -e "LETSENCRYPT_HOST=sonarr.kevtucker.com" \
     -e "LETSENCRYPT_EMAIL=mail@kevtucker.com" \
     linuxserver/sonarr
+
+## Install Radarr
     
 docker run -d \
   --name=radarr \
@@ -26,6 +28,8 @@ docker run -d \
     -e "LETSENCRYPT_HOST=radarr.kevtucker.com" \
     -e "LETSENCRYPT_EMAIL=mail@kevtucker.com" \
     linuxserver/radarr
+
+## Install Nzbget
   
 docker run -d \
     --name nzbget \
