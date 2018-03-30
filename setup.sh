@@ -25,7 +25,7 @@ $(lsb_release -cs) \
 stable"
 
 apt-get update -y
-apt-get install docker-ce
+apt-get install docker-ce -y
 systemctl enable docker
 groupadd docker
 usermod -aG docker $USER
