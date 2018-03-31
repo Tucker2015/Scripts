@@ -10,6 +10,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 apt update -y
+dpkg --configure -a
 apt upgrade -y
 apt install -y unzip wget curl git
 
