@@ -12,11 +12,11 @@ echo " "
 echo "Please enter your password for Root installation"
 echo " "
 
-if [ "$(id -u)" != "0" ]; then
-  exec sudo "$0" "$@" 
-fi
+#if [ "$(id -u)" != "0" ]; then
+#  exec sudo "$0" "$@" 
+#fi
 
-apt update -y
+sudo apt update -y
 dpkg --configure -a
 apt upgrade -y
 apt install -y unzip wget curl git
