@@ -5,6 +5,13 @@
 ### Install system needed updates ###
 
 # ensure running as root
+clear
+
+echo "Script to Update and install Docker on Ubuntu 16.04"
+echo " "
+echo "Please enter your password for Root installation"
+echo " "
+
 if [ "$(id -u)" != "0" ]; then
   exec sudo "$0" "$@" 
 fi
