@@ -9,6 +9,8 @@ clear
 
 echo "Script to Update and install Docker on Ubuntu 16.04"
 echo " "
+echo "MUST BE RUN ON A FRESH INSTALL !!"
+echo " "
 echo "Please enter your password for Root installation"
 echo " "
 
@@ -19,7 +21,7 @@ fi
 apt update -y
 dpkg --configure -a
 apt upgrade -y
-apt install -y unzip wget curl git
+apt install -y unzip wget curl
 
 ### Install Docker Components ###
 
