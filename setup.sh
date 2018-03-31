@@ -30,6 +30,7 @@ systemctl enable docker
 groupadd docker
 
 sudo usermod -a -G docker $USER
+service docker restart
 
 ### Create a key for SSH login
 
