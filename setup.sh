@@ -12,11 +12,11 @@ echo " "
 echo "Please enter your password for Root installation"
 echo " "
 
-#if [ "$(id -u)" != "0" ]; then
-#  exec sudo "$0" "$@" 
-#fi
+if [ "$(id -u)" != "0" ]; then
+  exec sudo "$0" "$@" 
+fi
 
-sudo apt update -y
+apt update -y
 dpkg --configure -a
 apt upgrade -y
 apt install -y unzip wget curl git
@@ -36,7 +36,7 @@ apt-get install docker-ce -y
 systemctl enable docker
 groupadd docker
 
-sudo usermod -a -G docker $USER
+usermod -a -G docker $USER
 service docker restart
 
 ### Create a key for SSH login
