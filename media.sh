@@ -1,5 +1,6 @@
 #!/bin/bash
 
+usermod -a -G docker $USER
 
 ## Install Sonarr
 
