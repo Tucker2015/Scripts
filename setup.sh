@@ -16,7 +16,7 @@ apt install -y unzip wget curl git
 ### Install Docker Components ###
 
 apt-get update
-sudo apt-get install \
+apt-get install \
 apt-transport-https \
 ca-certificates \
 curl \
