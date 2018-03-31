@@ -37,7 +37,7 @@ usermod -a -G docker $USER
 
 ### Create a key for SSH login
 
-ssh-keygen -t rsa -N "" -f id_rsa
+ssh-keygen -t rsa -N "" -f ~/id_rsa
 
 clear
 
