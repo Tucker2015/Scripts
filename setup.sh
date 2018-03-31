@@ -28,11 +28,12 @@ apt-get update -y
 apt-get install docker-ce -y
 systemctl enable docker
 groupadd docker
-usermod -a -G docker $USER
+
+sudo usermod -a -G docker $USER
 
 ### Create a key for SSH login
 
-ssh-keygen -t rsa -N "" -f ~/id_rsa
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 
 clear
 
