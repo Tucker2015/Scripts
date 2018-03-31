@@ -4,6 +4,11 @@
 
 ### Install system needed updates ###
 
+# ensure running as root
+if [ "$(id -u)" != "0" ]; then
+  exec sudo "$0" "$@" 
+fi
+
 apt update -y
 apt upgrade -y
 apt install -y unzip wget curl git
