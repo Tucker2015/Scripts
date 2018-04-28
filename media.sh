@@ -75,3 +75,18 @@ docker run -d \
   -v ~/downloads:/downloads \
   -v /etc/docker/deluge:/config \
   linuxserver/deluge
+
+## Install Ghost
+
+docker run -d \
+--name blog \
+--restart always \
+-p 2368:2368 \
+-e PUID=1000 -e PGID=1000 \
+-e url=https://ghost.kevtucker.com \
+-e VIRTUAL_PORT=2368 \
+-e VIRTUAL_HOST=ghost.kevtucker.com \
+-e LETSENCRYPT_MAIL=mail@kevtucker.com \
+-e LETSENCRYPT_HOST=ghost.kevtucker.com \
+-v /etc/docker/ghost/:/var/lib/ghost/content \
+ghost:latest
