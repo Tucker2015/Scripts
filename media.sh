@@ -71,7 +71,7 @@ docker run -d \
   -e "VIRTUAL_HOST=deluge.kevtucker.com" \
   -e "LETSENCRYPT_HOST=deluge.kevtucker.com" \
   -e "LETSENCRYPT_EMAIL=mail@kevtucker.com" \
-  -e "VIRTUAL_PORT=8112"
+  -e "VIRTUAL_PORT=8112" \
   -v ~/downloads:/downloads \
   -v /etc/docker/deluge:/config \
   linuxserver/deluge
