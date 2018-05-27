@@ -51,6 +51,8 @@ docker run -d \
 ## Install SabNZBD ##
 
 docker run -d \
+	--name sabnzb \
+    --restart always \
 	-v /etc/docker/sabnzbd:/config \
     -v /home/kevin/downloads:/downloads \
     -v /home/kevin/downloads/incomplete:/incomplete-downloads \
