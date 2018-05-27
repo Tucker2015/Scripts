@@ -36,18 +36,30 @@ docker run -d \
 
 ## Install Nzbget
   
+#docker run -d \
+#    --name nzbget \
+#    --restart always \
+#    -p 6789:6789 \
+#    -e PUID=1000 -e PGID=1000 \
+#    -v /etc/docker/nzbget:/config \
+#    -v /home/kevin/downloads:/downloads \
+#    -e "VIRTUAL_HOST=nzb.kevtucker.com" \
+#    -e "LETSENCRYPT_HOST=nzb.kevtucker.com" \
+#    -e "LETSENCRYPT_EMAIL=mail@kevtucker.com" \
+#   linuxserver/nzbget
+
+## Install SabNZBD ##
+
 docker run -d \
-    --name nzbget \
-    --restart always \
-    -p 6789:6789 \
-    -e PUID=1000 -e PGID=1000 \
-    -v /etc/docker/nzbget:/config \
+	-v /etc/docker/sabnzbd:/config \
     -v /home/kevin/downloads:/downloads \
+    -v /home/kevin/downloads/incomplete:/incomplete-downloads \
+    -e PGID=1000 -e PUID=1000  \
+    -p 8080:8080 -p 9090:9090 \
     -e "VIRTUAL_HOST=nzb.kevtucker.com" \
     -e "LETSENCRYPT_HOST=nzb.kevtucker.com" \
     -e "LETSENCRYPT_EMAIL=mail@kevtucker.com" \
-    linuxserver/nzbget
-    
+
 ## Install Portainer
 
 docker run -d \
