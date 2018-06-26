@@ -5,7 +5,22 @@ sudo apt install docker.io
 sudo groupadd docker
 sudo usermod -a -G docker $USER
 
-## Install Nginx and Letsencrypt ##
+## Install Unifi Controller ##
+
+docker create \
+  --name=unifi \
+  --restart always \
+  -v /etc/docker/unifi:/config \
+  -e PGID=1004 -e PUID=1000  \
+  -p 3478:3478/udp \
+  -p 10001:10001/udp \
+  -p 8080:8080 \
+  -p 8081:8081 \
+  -p 8443:8443 \
+  -p 8843:8843 \
+  -p 8880:8880 \
+  -p 6789:6789 \
+  linuxserver/unifi
 
 ## Install Sonarr
 
