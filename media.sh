@@ -51,8 +51,8 @@ docker run -d \
 #docker run -d \
 #    --name nzbget \
 #    --restart always \
-#    -p 6789:6789 \
-#    -e PUID=1000 -e PGID=1000 \
+#    -p 6101:6101 \
+#    -e PUID=1000 -e PGID=1004 \
 #    -v /etc/docker/nzbget:/config \
 #    -v /home/kevin/downloads:/downloads \
 #    -e "VIRTUAL_HOST=nzb.kevtucker.com" \
