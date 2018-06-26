@@ -50,23 +50,18 @@ docker run -d \
 docker run -d \
 	--name sabnzb \
     --restart always \
-<<<<<<< HEAD
     -p 6789:6789 \
     -e PUID=1000 -e PGID=1004 \
     -v /etc/docker/nzbget:/config \
     -v /home/kevin/downloads:/downloads \
     linuxserver/nzbget
-=======
 	-v /etc/docker/sabnzbd:/config \
     -v /home/kevin/downloads:/downloads \
     -v /home/kevin/downloads/incomplete:/incomplete-downloads \
     -e PGID=1000 -e PUID=1000  \
     -p 8080:8080 -p 9090:9090 \
-    -e "VIRTUAL_HOST=nzb.kevtucker.com" \
-    -e "LETSENCRYPT_HOST=nzb.kevtucker.com" \
-    -e "LETSENCRYPT_EMAIL=mail@kevtucker.com" \
     linuxserver/sabnzbd
->>>>>>> 77a575b44b813a8cd5672f18c9909a8884ffedf2
+
     
 ## Install Portainer
 
@@ -78,36 +73,5 @@ docker run -d \
 	-v /opt/portainer:/data \
 	portainer/portainer
 	
-## Install Deluge
 
-docker run -d \
-  --name deluge \
-  --net=host \
-  --restart always \
-<<<<<<< HEAD
-  -e PUID=1000 -e PGID=1004 \
-=======
-  -e PUID=1000 -e PGID=1000 \
-  -e "VIRTUAL_HOST=deluge.kevtucker.com" \
-  -e "LETSENCRYPT_HOST=deluge.kevtucker.com" \
-  -e "LETSENCRYPT_EMAIL=mail@kevtucker.com" \
-  -e "VIRTUAL_PORT=8112" \
->>>>>>> 77a575b44b813a8cd5672f18c9909a8884ffedf2
-  -v ~/downloads:/downloads \
-  -v /etc/docker/deluge:/config \
-  linuxserver/deluge
 
-## Install Ghost
-
-docker run -d \
---name blog \
---restart always \
--p 2368:2368 \
--e PUID=1000 -e PGID=1000 \
--e url=https://ghost.kevtucker.com \
--e VIRTUAL_PORT=2368 \
--e VIRTUAL_HOST=ghost.kevtucker.com \
--e LETSENCRYPT_MAIL=mail@kevtucker.com \
--e LETSENCRYPT_HOST=ghost.kevtucker.com \
--v /etc/docker/ghost/:/var/lib/ghost/content \
-ghost:latest
